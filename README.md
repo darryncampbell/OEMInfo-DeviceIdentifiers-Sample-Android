@@ -31,7 +31,7 @@ For example, StageNow will look as follows to enable access to the serial number
 
 You can then run this sample app and should see something like the below (captured on a device that does not support a SIM card):
 
-![Non-WAN](https://github.com/darryncampbell/EMDK-DeviceIdentifiers-Sample/raw/master/screenshots/non-wan.jpg)
+![Non-WAN](https://github.com/darryncampbell/EMDK-DeviceIdentifiers-Sample/raw/master/screenshots/non_wan.jpg)
 
 ## Handling errors:
 
