@@ -31,13 +31,13 @@ For example, StageNow will look as follows to enable access to the serial number
 
 You can then run this sample app and should see something like the below (captured on a device that does not support a SIM card):
 
-![Non-WAN](https://raw.githubusercontent.com/darryncampbell/EMDK-DeviceIdentifiers-Sample/master/screenshots/non-wan.jpg)
+![Non-WAN](https://github.com/darryncampbell/EMDK-DeviceIdentifiers-Sample/raw/master/screenshots/non-wan.jpg)
 
 ## Handling errors:
 
 If you failed to correctly allow your application access to oem_info service, you will see an error stating so against each property you did not assign access to, as shown below:
 
-![no_service_access](https://raw.githubusercontent.com/darryncampbell/EMDK-DeviceIdentifiers-Sample/master/screenshots/no_service_access.jpg)
+![no_service_access](https://github.com/darryncampbell/EMDK-DeviceIdentifiers-Sample/raw/master/screenshots/no_service_access.jpg)
 
 Assign access to your device and re-run the application.
 
