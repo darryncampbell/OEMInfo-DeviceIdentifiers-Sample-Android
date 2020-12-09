@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ProviderInfo;
 import android.content.pm.Signature;
 import android.content.pm.SigningInfo;
 import android.database.Cursor;
@@ -12,6 +14,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Trace;
+import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.TextView;
@@ -22,17 +25,21 @@ public class MainActivity extends AppCompatActivity {
     String TAG = "DeviceID";
     String URI_SERIAL = "content://oem_info/oem.zebra.secure/build_serial";
     String URI_IMEI = "content://oem_info/wan/imei";
+    String URI_BT_MAC = "content://oem_info/oem.zebra.secure/bt_mac";
 
     //  todo are other APIs documented?
-    //  todo test on WAN device
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //  Alternatively, use Android_ID
+        //String androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+
         RetrieveOEMInfo(Uri.parse(URI_SERIAL), (TextView) findViewById(R.id.txtSerialNumber), false);       //  Build.getSerial()
         RetrieveOEMInfo(Uri.parse(URI_IMEI), (TextView) findViewById(R.id.txtImei), true);              //  TelephonyManager getImei()
+        RetrieveOEMInfo(Uri.parse(URI_BT_MAC), (TextView) findViewById(R.id.txtBtMac), false);
 }
 
     private void RetrieveOEMInfo(Uri uri, TextView status, boolean isIMEI) {
