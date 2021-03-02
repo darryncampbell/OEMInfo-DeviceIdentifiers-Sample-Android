@@ -12,6 +12,7 @@ import android.content.pm.SigningInfo;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Trace;
 import android.provider.Settings;
@@ -40,7 +41,13 @@ public class MainActivity extends AppCompatActivity {
         RetrieveOEMInfo(Uri.parse(URI_SERIAL), (TextView) findViewById(R.id.txtSerialNumber), false);       //  Build.getSerial()
         RetrieveOEMInfo(Uri.parse(URI_IMEI), (TextView) findViewById(R.id.txtImei), true);              //  TelephonyManager getImei()
         RetrieveOEMInfo(Uri.parse(URI_BT_MAC), (TextView) findViewById(R.id.txtBtMac), false);
-}
+
+        //  Note: Build ID and Fingerprint do not need special permission granted by Access Manager (these are standard Android IDs)
+        TextView textViewID =  findViewById(R.id.txtBuildId);
+        textViewID.setText(Build.ID);
+        TextView textViewFingerPrint =   findViewById(R.id.txtFingerprint);
+        textViewFingerPrint.setText(Build.FINGERPRINT);
+    }
 
     private void RetrieveOEMInfo(Uri uri, TextView status, boolean isIMEI) {
         //  For clarity, this code calls ContentResolver.query() on the UI thread but production code should perform queries asynchronously.
