@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
     String URI_IMEI = "content://oem_info/wan/imei";
     String URI_BT_MAC = "content://oem_info/oem.zebra.secure/bt_mac";
 
-    //  todo are other APIs documented?
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

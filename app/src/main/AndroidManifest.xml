@@ -3,6 +3,10 @@
     package="com.zebra.emdk_deviceidentifiers_sample">
 
     <uses-permission android:name="com.zebra.provider.READ"/>
+    <!--  Required for Content provider restrictions introduced in Android 11 -->
+    <queries>
+        <provider android:authorities="oem_info" />
+    </queries>
 
     <application
         android:allowBackup="true"
