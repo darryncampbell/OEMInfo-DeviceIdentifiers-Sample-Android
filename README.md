@@ -48,4 +48,14 @@ If you failed to correctly allow your application access to oem_info service, yo
 
 Assign access to your device and re-run the application.
 
+## Changes to Package visibility in Android 11
 
+Applications targeting SDK 30 (Android 11) will need to confirm to the package visibility filtering on Android as described in the Android documentation at [https://developer.android.com/training/package-visibility](https://developer.android.com/training/package-visibility) and [https://developer.android.com/training/package-visibility](https://developer.android.com/training/package-visibility/declaring)
+
+To grant visility by authority, add the following to your manifest:
+
+```xml
+<queries>
+    <provider android:authorities="oem_info" />
+</queries>
+```
