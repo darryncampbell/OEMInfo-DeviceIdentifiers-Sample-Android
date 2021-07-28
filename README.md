@@ -56,6 +56,7 @@ To grant visility by authority, add the following to your manifest:
 
 ```xml
 <queries>
+    <package android:name="com.zebra.zebracontentprovider" />
     <provider android:authorities="oem_info" />
 </queries>
 ```
