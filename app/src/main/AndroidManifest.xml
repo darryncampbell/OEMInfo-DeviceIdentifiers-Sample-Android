@@ -6,7 +6,6 @@
     <!--  Required for Content provider restrictions introduced in Android 11 -->
     <queries>
         <package android:name="com.zebra.zebracontentprovider" />
-        <provider android:authorities="oem_info" />
     </queries>
 
     <application
